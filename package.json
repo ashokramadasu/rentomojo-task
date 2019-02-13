@@ -1,0 +1,27 @@
+{
+  "name": "rentomojo-task",
+  "version": "1.0.0",
+  "description": "API to scrape medium website and get unique urls and its reference counts. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashokramadasu/rentomojo-task.git"
+  },
+  "author": "Ashok Sriramadasu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashokramadasu/rentomojo-task/issues"
+  },
+  "homepage": "https://github.com/ashokramadasu/rentomojo-task#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
