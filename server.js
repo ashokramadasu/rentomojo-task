@@ -1,6 +1,7 @@
 'use strict'
 
 const express     = require('express')
+    , http        = require('http')
     , request     = require('request')
     , rp          = require('request-promise')
     , cheerio     = require('cheerio')
@@ -12,6 +13,8 @@ const express     = require('express')
     , app         = express();
 
 // configuration ===========================================================
+// This will limit 5 concurrent Requests.
+http.globalAgent.maxSockets = 5;
 // Express Middleware settings
 app.use(helmet());
 
@@ -57,9 +60,10 @@ let getLinks = async function (req, res) {
 };
 
 
-
+// getLinks route
 app.get('/getLinks', getLinks);
 
-app.listen('3000', init);
-console.log('Express Server listening on port 3000');
+// Server Listens and calls init function to make DB connection live.
+app.listen(config.port, init);
+console.log('Express Server listening on port ' + config.port);
 exports = module.exports = app;
